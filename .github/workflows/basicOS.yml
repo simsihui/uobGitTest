@@ -48,7 +48,7 @@ jobs:
         with:
           repository: simsihui/HiddenUOB
           path: hiddenfolder
-          token: $({ secrets.SECRETUOB })
+          token: ${{ secrets.SECRETUOB }}
 
       # This prints out the hidden files
       - name: print out hidden things
