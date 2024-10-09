@@ -41,3 +41,10 @@ jobs:
       - name: Testing with Pytest
         run: |
           pytest
+
+      # this is where we access the hidden repo
+      - name: Checkout Hidden Repo
+        uses: actions/checkout@v4
+        with:
+          repository: simsihui/HiddenUOB
+          token: $({ secrets.SECRETUOB })
