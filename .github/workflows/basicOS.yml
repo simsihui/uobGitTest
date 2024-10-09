@@ -3,13 +3,13 @@ on:
   push:
     branches: [main]
 
-Jobs:
+jobs:
   builds:
-  # Create VR with ubuntu OS
+  # Create VR with Ubuntu OS
     runs-on: Ubuntu-20.04
 
     steps:
-    # first step to say hello
+    # First step to say hello
       - name: greeting steps
-        runs:
+        run:
           echo "Hello there"
