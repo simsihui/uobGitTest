@@ -43,20 +43,20 @@ jobs:
           pytest
 
       # this is where we access the hidden repo
-      - name: Checkout Hidden Repo
-        uses: actions/checkout@v4
-        with:
-          repository: simsihui/HiddenUOB
-          path: hiddenfolder
-          token: ${{ secrets.SECRETUOB }}
+      # - name: Checkout Hidden Repo
+      #  uses: actions/checkout@v4
+       # with:
+         # repository: simsihui/HiddenUOB
+          # path: hiddenfolder
+         #  token: ${{ secrets.SECRETUOB }}
 
       # This prints out the hidden files
-      - name: print out hidden things
-        run: |
-          ls
-          cd hiddenfolder
-          ls
-          cat hiddentext.txt
+      -# name: print out hidden things
+      #  run: |
+         # ls
+         # cd hiddenfolder
+         # ls
+        #  cat hiddentext.txt
 
 
       - name: Discord notification 
@@ -72,11 +72,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./ # Publish the root directory (where index.html is located)
-
-      - name: Checkout Hidden Repo
-        uses: actions/checkout@v4
-        with:
-          repository: simsihui/uobGitTest
-          path: hiddenfolder
-          token: ${{ secrets.PAT_TOKEN }}
-
