@@ -73,7 +73,7 @@ jobs:
       uses: sebastianpopp/discord-action@releases/v2
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        message: "${{ github.repository }} is deployed and now live! Please go and view it at the link provided: https://kevintan1203.github.io/GitTest/"
+        message: "${{ github.repository }} is deployed and now live! Please go and view it at the link provided: https://simsihui.github.io/uobGitTest/"
 
     - if: ${{ failure() }}
       name: discord
