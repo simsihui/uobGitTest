@@ -70,5 +70,5 @@ jobs:
       - name: Deploy to GitHub Pages 
         uses: peaceiris/actions-gh-pages@v3
         with: 
-          github_token: ${{ secrets.SECRET_TOKEN }} 
+          github_token: ${{ secrets.SECRETUOB }} 
           publish_dir: ./ # Publish the root directory (where index.html is located)
