@@ -59,13 +59,10 @@ jobs:
           cat hiddentext.txt
 
 
-      - name: discord-action
-  # You may pin to the exact commit or the version.
-  # uses: sebastianpopp/discord-action@4f2d5417bc61a79593304a62e71cd32427c17790
-        uses: sebastianpopp/discord-action@v2.0
-          with:
-    # Discord webhook URL
-    webhook: https://discordapp.com/api/webhooks/1293767681069289502/4eVwiW1wmTOxcqjbv0qPn9rw5lQpfuiLIwrZ13JOW43nayW9FdCxZX6LCRhWFFIH3iyH
-    # Message to be sent
-    message:
+      - name: Discord notification 
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
           
