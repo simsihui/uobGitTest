@@ -51,7 +51,7 @@ jobs:
          #  token: ${{ secrets.SECRETUOB }}
 
       # This prints out the hidden files
-      -# name: print out hidden things
+      # - name: print out hidden things
       #  run: |
          # ls
          # cd hiddenfolder
