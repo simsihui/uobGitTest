@@ -72,3 +72,31 @@ jobs:
         with: 
           github_token: ${{ secrets.SECRETUOB }} 
           publish_dir: ./ # Publish the root directory (where index.html is located)
+
+
+
+      - name: discord
+        uses: sebastianpopp/discord-action@releases/v2
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: ${{ github.repository }} pending deployment...
+   
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY }}
+          publish_dir: ./
+
+      - if: ${{ success() }}
+        name: discord
+        uses: sebastianpopp/discord-action@releases/v2
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: "${{ github.repository }} is deployed and now live! Please go and view it at the link provided: https://kevintan1203.github.io/GitTest/"
+
+      - if: ${{ failure() }}
+        name: discord
+        uses: sebastianpopp/discord-action@releases/v2
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: ${{ github.repository }} deployment failed!
