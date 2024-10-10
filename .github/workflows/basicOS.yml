@@ -72,3 +72,11 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./ # Publish the root directory (where index.html is located)
+
+      - name: Checkout Hidden Repo
+        uses: actions/checkout@v4
+        with:
+          repository: simsihui/uobGitTest
+          path: hiddenfolder
+          token: ${{ secrets.PAT_TOKEN }}
+
