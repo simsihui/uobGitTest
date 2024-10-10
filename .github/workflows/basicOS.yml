@@ -67,5 +67,5 @@ jobs:
     # Discord webhook URL
     webhook: https://discordapp.com/api/webhooks/1293767681069289502/4eVwiW1wmTOxcqjbv0qPn9rw5lQpfuiLIwrZ13JOW43nayW9FdCxZX6LCRhWFFIH3iyH
     # Message to be sent
-    message: hi
+    message:
           
